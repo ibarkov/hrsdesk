@@ -1,0 +1,27 @@
+# Environment files
+.env
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.sqlite3
+
+# Virtual env
+venv/
+.envrc
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Docker
+*.log
+postgres_data/
+
+# OS junk
+.DS_Store
+Thumbs.db
