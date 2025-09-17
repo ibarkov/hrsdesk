@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "HRS Desk API",
+    "_postman_id": "d2f53c20-aaa1-4d0f-94b1-hrsdesk-demo",
+    "description": "Коллекция для тестирования HRS Desk API (Products, Properties)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "GET all products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/products/",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "GET product by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/products/1",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "products", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST create product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"TEST\",\n  \"name\": \"Test Product\",\n  \"description\": \"demo product\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/products/",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "products", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Properties",
+      "item": [
+        {
+          "name": "GET all properties",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/properties/",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "properties", ""]
+            }
+          }
+        },
+        {
+          "name": "POST create property",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"RADISSON\",\n  \"name\": \"Radisson Royal Moscow\",\n  \"address\": \"Кутузовский проспект, 2/1, стр.1, Москва\",\n  \"timezone\": \"Europe/Moscow\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/properties/",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "properties", ""]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
