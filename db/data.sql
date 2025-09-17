@@ -20,7 +20,7 @@ INSERT INTO property_products (property_id, product_id) VALUES
 -- 4. Сотрудник отеля (ИТ-менеджер Иванов)
 -- Пароль: Password123
 INSERT INTO property_employees (property_id, first_name, last_name, email, password_hash, phone, role_in_property) VALUES
-  (1, 'Иван', 'Иванов', 'iivanov@marriott.local',
+  (1, 'Иван', 'Иванов', 'iivanov@marriott.ru',
    '$2b$12$KIX5B7zR8BZ48z8KyWjOueJqzQINbAOl0zRkNeMt4wPcOEHl7Y3lG',
    '+7-999-123-45-67', 'IT Manager');
 
