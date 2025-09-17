@@ -8,6 +8,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.pkl
+*.pyc
 *.sqlite3
 
 # Virtual env

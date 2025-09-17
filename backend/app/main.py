@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from app.core.database import engine, Base
 
-# from app.models import product, property, employee, hrs_employee, support_level, duty_roster, ticket
+# Регистрируем модели, чтобы Base видел таблицы
+from app.models import product  # noqa: F401
 
-# Создаём таблицы при старте (только для разработки!)
+from app.routers.products import router as products_router
+
+# Создание таблиц при старте (только для DEV!)
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="HRS Desk API")
@@ -11,3 +14,5 @@ app = FastAPI(title="HRS Desk API")
 @app.get("/")
 def root():
     return {"message": "HRS Desk API is running"}
+
+app.include_router(products_router)
