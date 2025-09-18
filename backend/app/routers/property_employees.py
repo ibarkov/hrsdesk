@@ -19,6 +19,14 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def list_property_employees(db: Session = Depends(get_db)):
     return db.query(PropertyEmployee).all()
 
+@router.get("/{employee_id}", response_model=PropertyEmployeeOut)
+def get_property_employee(employee_id: int, db: Session = Depends(get_db)):
+    obj = db.query(PropertyEmployee).get(employee_id)
+    if not obj:
+        raise HTTPException(status_code=404, detail="Property employee not found")
+    return obj
+
+
 @router.post("/", response_model=PropertyEmployeeOut, status_code=status.HTTP_201_CREATED)
 def create_property_employee(payload: PropertyEmployeeCreate, db: Session = Depends(get_db)):
     exists = db.query(PropertyEmployee).filter(PropertyEmployee.email == payload.email).first()
