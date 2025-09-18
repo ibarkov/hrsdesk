@@ -10,6 +10,7 @@ from app.routers.properties import router as properties_router
 from app.routers.property_employees import router as property_employees_router
 from app.routers.hrs_employees import router as hrs_employees_router
 from app.routers.auth import router as auth_router
+from app.routers.tickets import router as tickets_router
 
 
 # Создание таблиц при старте (только для разработки!)
@@ -27,3 +28,4 @@ app.include_router(properties_router)
 app.include_router(property_employees_router)
 app.include_router(hrs_employees_router)
 app.include_router(auth_router)
+app.include_router(tickets_router)
