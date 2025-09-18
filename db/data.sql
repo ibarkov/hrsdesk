@@ -21,20 +21,20 @@ INSERT INTO property_products (property_id, product_id) VALUES
 -- Пароль: Password123
 INSERT INTO property_employees (property_id, first_name, last_name, email, password_hash, phone, role_in_property) VALUES
   (1, 'Иван', 'Иванов', 'iivanov@marriott.ru',
-   '$2b$12$KIX5B7zR8BZ48z8KyWjOueJqzQINbAOl0zRkNeMt4wPcOEHl7Y3lG',
+   '$2b$12$A8Y8OfaBpOJ5oLv/KLDx2.YDaQbXDm1WdCdW10AstgOhKRVFQuhmK',
    '+7-999-123-45-67', 'IT Manager');
 
 -- 5. Сотрудники HRS
 -- 5.1 Админ HRS
 INSERT INTO hrs_employees (first_name, last_name, email, password_hash, phone, is_admin, job_title, product_id) VALUES
   ('Admin', 'HRS', 'admin@hrsdesk.ru',
-   '$2b$12$KIX5B7zR8BZ48z8KyWjOueJqzQINbAOl0zRkNeMt4wPcOEHl7Y3lG',
+   '$2b$12$A8Y8OfaBpOJ5oLv/KLDx2.YDaQbXDm1WdCdW10AstgOhKRVFQuhmK',
    '+7-495-000-00-00', TRUE, 'System Administrator', NULL);
 
 -- 5.2 Специалист по Opera (продукт id=1)
 INSERT INTO hrs_employees (first_name, last_name, email, password_hash, phone, is_admin, job_title, product_id) VALUES
   ('Максим', 'Руднев', 'mrudnev@hrsdesk.ru',
-   '$2b$12$KIX5B7zR8BZ48z8KyWjOueJqzQINbAOl0zRkNeMt4wPcOEHl7Y3lG',
+   '$2b$12$A8Y8OfaBpOJ5oLv/KLDx2.YDaQbXDm1WdCdW10AstgOhKRVFQuhmK',
    '+7-910-777-88-99', FALSE, 'Leading Opera Specialist', 1);
 
 -- 6. Уровни поддержки (L1, L2, L3)

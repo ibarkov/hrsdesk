@@ -2,7 +2,7 @@
   "info": {
     "name": "HRS Desk API",
     "_postman_id": "d2f53c20-aaa1-4d0f-94b1-hrsdesk-demo",
-    "description": "Коллекция для тестирования HRS Desk API (Products, Properties)",
+    "description": "Коллекция для тестирования HRS Desk API (Products, Properties, Auth)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -40,7 +40,9 @@
           "name": "POST create product",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"code\": \"TEST\",\n  \"name\": \"Test Product\",\n  \"description\": \"demo product\"\n}"
@@ -76,7 +78,9 @@
           "name": "POST create property",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"code\": \"RADISSON\",\n  \"name\": \"Radisson Royal Moscow\",\n  \"address\": \"Кутузовский проспект, 2/1, стр.1, Москва\",\n  \"timezone\": \"Europe/Moscow\"\n}"
@@ -87,6 +91,34 @@
               "host": ["127.0.0.1"],
               "port": "8000",
               "path": ["api", "properties", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                { "key": "username", "value": "admin@hrsdesk.ru", "type": "text" },
+                { "key": "password", "value": "Password123", "type": "text" }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/login",
+              "protocol": "http",
+              "host": ["127.0.0.1"],
+              "port": "8000",
+              "path": ["api", "auth", "login"]
             }
           }
         }
