@@ -3,14 +3,20 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 from app.core.database import Base
 
+
 class Ticket(Base):
     __tablename__ = "tickets"
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(200), nullable=False)
     description = Column(Text)
-    status = Column(String(30), default="OPEN")   # OPEN, IN_PROGRESS, RESOLVED, CLOSED
-    priority = Column(String(20), nullable=False) # P1, P2, P3, P4, R&D
+
+    # статусы для HRS: OPEN, IN_PROGRESS, PENDING, ON_HOLD, SOLVED, CLOSED
+    # статусы для Property Employees: OPEN, PENDING, SOLVED, CLOSED
+    status = Column(String(30), default="OPEN")
+
+    # приоритеты: P1 (критический), P2, P3, P4, R&D
+    priority = Column(String(20), nullable=False)
 
     property_id = Column(Integer, ForeignKey("properties.id", ondelete="CASCADE"))
     product_id = Column(Integer, ForeignKey("products.id", ondelete="CASCADE"))
@@ -26,6 +32,6 @@ class Ticket(Base):
 
     resolution_summary = Column(Text, nullable=True)
 
-    # связи (для удобства при join)
+    # связи (для join при необходимости)
     property = relationship("Property")
     product = relationship("Product")

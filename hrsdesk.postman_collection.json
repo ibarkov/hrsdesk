@@ -1,8 +1,8 @@
 {
   "info": {
     "name": "HRS Desk API",
-    "_postman_id": "hrsdesk-demo-collection",
-    "description": "Коллекция для тестирования HRS Desk API (Products, Properties, Auth, Employees, Tickets)",
+    "_postman_id": "hrsdesk-full-collection",
+    "description": "Полная коллекция для тестирования HRS Desk API (Auth, Products, Properties, Employees, Tickets)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -37,37 +37,111 @@
     {
       "name": "Products",
       "item": [
-        { "name": "GET all products", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/products/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products",""] } } },
-        { "name": "GET product by ID", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/products/1", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products","1"] } } },
-        { "name": "POST create product", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"code\": \"TEST\",\n  \"name\": \"Test Product\",\n  \"description\": \"demo\"\n}" }, "url": { "raw": "http://127.0.0.1:8000/api/products/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products",""] } } }
+        {
+          "name": "GET all products",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/products/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products",""] } }
+        },
+        {
+          "name": "GET product by ID",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/products/1", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products","1"] } }
+        },
+        {
+          "name": "POST create product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"code\": \"TEST\",\n  \"name\": \"Test Product\",\n  \"description\": \"demo\"\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/products/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","products",""] }
+          }
+        }
       ]
     },
     {
       "name": "Properties",
       "item": [
-        { "name": "GET all properties", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/properties/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","properties",""] } } },
-        { "name": "POST create property", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"code\": \"RADISSON\",\n  \"name\": \"Radisson Royal Moscow\",\n  \"address\": \"Кутузовский проспект, 2/1, Москва\",\n  \"timezone\": \"Europe/Moscow\"\n}" }, "url": { "raw": "http://127.0.0.1:8000/api/properties/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","properties",""] } } }
+        {
+          "name": "GET all properties",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/properties/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","properties",""] } }
+        },
+        {
+          "name": "POST create property",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"code\": \"RADISSON\",\n  \"name\": \"Radisson Royal Moscow\",\n  \"address\": \"Кутузовский проспект, 2/1, Москва\",\n  \"timezone\": \"Europe/Moscow\"\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/properties/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","properties",""] }
+          }
+        }
       ]
     },
     {
       "name": "Property Employees",
       "item": [
-        { "name": "GET all property employees", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/property_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","property_employees",""] } } },
-        { "name": "POST create property employee", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Иван\",\n  \"last_name\": \"Иванов\",\n  \"email\": \"iivanov@marriott.ru\",\n  \"password\": \"Password123\",\n  \"phone\": \"+7-999-123-45-67\",\n  \"role_in_property\": \"IT Manager\"\n}" }, "url": { "raw": "http://127.0.0.1:8000/api/property_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","property_employees",""] } } }
+        {
+          "name": "GET all property employees",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/property_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","property_employees",""] } }
+        },
+        {
+          "name": "POST create property employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Иван\",\n  \"last_name\": \"Иванов\",\n  \"email\": \"iivanov@marriott.ru\",\n  \"password\": \"Password123\",\n  \"phone\": \"+7-999-123-45-67\",\n  \"role_in_property\": \"IT Manager\"\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/property_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","property_employees",""] }
+          }
+        }
       ]
     },
     {
       "name": "HRS Employees",
       "item": [
-        { "name": "GET all HRS employees", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/hrs_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","hrs_employees",""] } } },
-        { "name": "POST create HRS employee", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Максим\",\n  \"last_name\": \"Руднев\",\n  \"email\": \"mrudnev@hrsdesk.ru\",\n  \"password\": \"Password123\",\n  \"phone\": \"+7-910-777-88-99\",\n  \"is_admin\": false,\n  \"job_title\": \"Leading Opera Specialist\",\n  \"product_id\": 1\n}" }, "url": { "raw": "http://127.0.0.1:8000/api/hrs_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","hrs_employees",""] } } }
+        {
+          "name": "GET all HRS employees",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/hrs_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","hrs_employees",""] } }
+        },
+        {
+          "name": "POST create HRS employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Максим\",\n  \"last_name\": \"Руднев\",\n  \"email\": \"mrudnev@hrsdesk.ru\",\n  \"password\": \"Password123\",\n  \"phone\": \"+7-910-777-88-99\",\n  \"is_admin\": false,\n  \"job_title\": \"Leading Opera Specialist\",\n  \"product_id\": 1\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/hrs_employees/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","hrs_employees",""] }
+          }
+        }
       ]
     },
     {
       "name": "Tickets",
       "item": [
-        { "name": "GET all tickets", "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/tickets/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets",""] } } },
-        { "name": "POST create ticket", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"title\": \"Opera module not working\",\n  \"description\": \"Front desk cannot access Opera PMS\",\n  \"priority\": \"P1\",\n  \"property_id\": 1,\n  \"product_id\": 1,\n  \"created_by_employee_id\": 1\n}" }, "url": { "raw": "http://127.0.0.1:8000/api/tickets/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets",""] } } }
+        {
+          "name": "GET all tickets",
+          "request": { "method": "GET", "url": { "raw": "http://127.0.0.1:8000/api/tickets/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets",""] } }
+        },
+        {
+          "name": "POST create ticket",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"Opera module not working\",\n  \"description\": \"Front desk cannot access Opera PMS\",\n  \"priority\": \"P1\",\n  \"property_id\": 1,\n  \"product_id\": 1,\n  \"created_by_employee_id\": 1\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/tickets/", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets",""] }
+          }
+        },
+        {
+          "name": "PUT update ticket (assign + change status)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"assigned_to_employee_id\": 2,\n  \"status\": \"IN_PROGRESS\"\n}" },
+            "url": { "raw": "http://127.0.0.1:8000/api/tickets/1", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets","1"] }
+          }
+        },
+        {
+          "name": "DELETE ticket (admin only)",
+          "request": {
+            "method": "DELETE",
+            "url": { "raw": "http://127.0.0.1:8000/api/tickets/1", "protocol": "http", "host": ["127.0.0.1"], "port": "8000", "path": ["api","tickets","1"] }
+          }
+        }
       ]
     }
   ]
